@@ -1,9 +1,13 @@
 <template>
   <div class="msg-pael">{{ msg }}</div>
+  <div class="msg-pael">{{ count }}</div>
+  <div class="msg-pael">{{ compotedComponent }}</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed,  } from 'vue'
+interface compotedComponent {}
+interface ComputedRef {}
 export default defineComponent({
   props: {
     msg: String,
@@ -11,6 +15,12 @@ export default defineComponent({
   },
   setup(props: any) {
     console.log(props, 'props')
+    const compotedComponent: ComputedRef<number> = computed<number>((count: any) => {
+      count + 1
+    })
+    return {
+      ...compotedComponent
+    }
   },
 })
 </script>

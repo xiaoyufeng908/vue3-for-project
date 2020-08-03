@@ -1,30 +1,31 @@
 <template>
   <div id="app">
-    <HelloWorld :msg="msg" :count="count"/>
+    <HelloWorld :msg="msg" :count="count" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue'
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, reactive } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
+
 interface propsReactive {
-  msg: String,
-  count: Number
+  msg: String;
+  count: Number;
 }
 export default defineComponent({
   setup() {
-    const data:propsReactive = reactive<propsReactive>({
-      msg: 'HELLO WORLD!',
-      count: 0
-    })
+    const data: propsReactive = reactive<propsReactive>({
+      msg: "HELLO WORLD!",
+      count: 0,
+    });
     return {
-      ...data
-    }
+      ...data,
+    };
   },
   components: {
-    HelloWorld
-  }
-})
+    HelloWorld,
+  },
+});
 </script>
 
 <style>
