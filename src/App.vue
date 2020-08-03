@@ -18,7 +18,7 @@ export default defineComponent({
       count: 0
     })
     return {
-      data
+      ...data
     }
   },
   components: {
